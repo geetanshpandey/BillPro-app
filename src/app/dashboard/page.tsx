@@ -27,15 +27,14 @@ const DashboardLayout: React.FC = () => {
   return (
     <div className="flex flex-col md:flex-row h-screen">
       {/* Sidebar */}
-      <div className="bg-gray-800 text-white flex flex-col items-center py-4">
         <Sidebar />
-      </div>
+
 
       {/* Main Content */}
       <div className="flex-1 p-6 bg-gray-100 md:ml-64">
         {/* Top bar */}
         <div className="flex justify-between items-center mb-6 ml-4">
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-4xl font-bold sm:ml-1 ml-16">
             <span className={`${caveat.className}`}>
               <span className="text-blue-700">Dashboard</span>
             </span>

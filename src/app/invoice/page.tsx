@@ -80,17 +80,15 @@ const InvoiceLayout: React.FC = () => {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <div className="w-[20%] bg-gray-800 text-white flex flex-col items-center py-4">
         <Sidebar />
-      </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-6 bg-gray-100">
+      <div className="flex-1 p-6 bg-gray-100 sm:ml-64">
         {/* Top bar */}
         <div className="flex justify-between items-center mb-6 ml-4">
           <h1 className="text-4xl font-bold">
             <span className={`${caveat.className}`}>
-              <span className="text-blue-700">Invoices</span>
+              <span className="text-blue-700 sm:ml-10 ml-12">Invoices</span>
             </span>
           </h1>
           {/* Dropdown */}
@@ -166,7 +164,7 @@ const InvoiceLayout: React.FC = () => {
           {/* Right Side: Create Button */}
           <button
             onClick={addRecentItem}
-            className="absolute top-8 right-4 bg-blue-700 text-white px-4 py-2 rounded-full flex items-center shadow-lg hover:bg-blue-800"
+            className="absolute top-4 sm:scale-100 scale-75  right-4 bg-blue-700 text-white px-4 py-2 rounded-full flex items-center shadow-lg hover:bg-blue-800"
           >
             <Plus className="mr-2" />
             Create
