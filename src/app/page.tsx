@@ -52,9 +52,11 @@ const DocumentPage: React.FC = () => {
       <main className="p-6 mt-20">
 
         <div className="ml-2">
-        <div className="sm:ml-56 ml-32">
-        <span className="sm:ml-72 mb-8 sm:text-lg text-md mt-4 font-semibold text-gray-500">Introducing BillPro!</span>
-        </div>
+        <div className="flex justify-center mt-4">
+        <span className="sm:text-lg text-md font-semibold text-gray-500">
+          Introducing BillPro!
+        </span>
+      </div>
         </div>
         <div className="text-center sm:text-5xl text-4xl font-bold mt-4">
         <span className={`${caveat.className}`}><span className="text-blue-700">Easy Billing</span></span>
