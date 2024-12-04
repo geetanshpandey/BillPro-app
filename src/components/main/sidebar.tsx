@@ -55,9 +55,10 @@ const Sidebar: React.FC = () => {
         aria-label="Sidebar"
       >
         <div className="h-full py-6 px-3 overflow-y-auto bg-blue-50 dark:bg-gray-800">
+          <Link href="/">
           <span className="flex justify-center text-center text-black mb-4 self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
             <LayoutDashboard size={28} className='sm:mr-2 mr-1' />Bill<span className='text-blue-600'>Pro</span>
-          </span>
+          </span></Link>
           <ul className="space-y-2 font-medium">
             {/* Sidebar menu items */}
             <li>
