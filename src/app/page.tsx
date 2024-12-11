@@ -6,6 +6,8 @@ import NavbarSidebar from "@/components/main/navbarsidebar";
 import { toast } from "sonner"; // Import Sonner components
 import Link from "next/link";
 import { Acme, Archivo_Black, Caveat, Bowlby_One } from 'next/font/google';
+import { Dialog, DialogContent, DialogHeader, DialogFooter, DialogTitle } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
 
 const acme = Acme({ subsets: ['latin'], weight: ['400'] });
 const archivoBlack = Archivo_Black({ subsets: ['latin'], weight: ['400'] });
@@ -22,9 +24,23 @@ interface Document {
 const DocumentPage: React.FC = () => {
   const [documents, setDocuments] = useState<Document[]>([]);
   const id1 = new Date().toLocaleTimeString();
-   
+  const [open, setOpen] = useState(false);
 
-  const addDocument = () => {
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleSignIn = () => {
+        // Add sign-in logic here (e.g., form submission, authentication API call)
+        console.log('Sign in process initiated');
+        handleClose();
+    };
+
+    const addDocument = () => {
     const newDocument: Document = {
       name: "New Document",
       createdTime: new Date().toLocaleTimeString(),
@@ -69,6 +85,35 @@ const DocumentPage: React.FC = () => {
         </div>
         <div className="flex mt-12 justify-center gap-x-10 text-center">
           <Button className="p-4 bg-blue-600 text-white w-32 hover:bg-blue-500">Try it free</Button>
+          <Button onClick={handleClickOpen} className="p-4 bg-black text-white w-32 hover:bg-gray-900">SignIn</Button>
+          <div className=""> 
+          <Dialog open={open} onOpenChange={setOpen}>
+                <DialogContent className="p-8">
+                    <DialogHeader>
+                        <DialogTitle className="justify-center text-center">Sign In</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4">
+                        <Input
+                            id="email"
+                            placeholder="Email Address"
+                            type="email"
+                            className="w-full"
+                        />
+                        <Input
+                            id="password"
+                            placeholder="Password"
+                            type="password"
+                            className="w-full"
+                        />
+                    </div>
+                    <DialogFooter className="mt-4 justify-center">
+                        <Button onClick={handleSignIn} className="bg-black text-white w-full">
+                            Sign In
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+          </div>
         </div>
         <div className="flex mt-16 sm:ml-48 ml-16 justify-center border border-gray-300 w-[70%] h-40 rounded-xl">
           <span className="mt-16 text-gray-500">Empty area</span>
